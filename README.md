@@ -46,3 +46,5 @@ curl --location 'https://api.cloud-payments.net/api/v1/payments/12411' \
 
 **Nota:** A página administrativa associada a esta API ainda está em desenvolvimento e não está completamente finalizada, mas está 80% completa.
 ```
+
+Essa nota ajuda a informar os usuários sobre o estado atual da página administrativa, garantindo transparência sobre o desenvolvimento do sistema.
