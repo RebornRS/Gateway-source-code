@@ -1,4 +1,3 @@
-```markdown
 # Documentação da API de Pagamentos
 
 ## Descrição
@@ -43,6 +42,7 @@ Esta documentação descreve como utilizar a API de Pagamentos da Cloud Payments
 curl --location 'https://api.cloud-payments.net/api/v1/payments/12411' \
 --header 'authorization: '
 ```
+
 
 **Nota:** A página administrativa associada a esta API ainda está em desenvolvimento e não está completamente finalizada, mas está 80% completa.
 ```
