@@ -1,5 +1,3 @@
-Claro, você pode adicionar uma observação sobre o estado da página administrativa da seguinte forma:
-
 ```markdown
 # Documentação da API de Pagamentos
 
