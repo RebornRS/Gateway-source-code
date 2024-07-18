@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="./inc/settings.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+  <div class="flex flex-col min-h-[100dvh] bg-gradient-to-b from-gray-950 to-gray-950 text-white">
+    <header class="bg-electric-violet px-4 lg:px-6 h-14 flex items-center justify-center bg-gray-800">
+    <a class="flex items-center justify-center" href="#" rel="ugc">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="h-6 w-6"
+      >
+        <path d="m8 3 4 8 5-5 5 15H2L8 3z"></path>
+      </svg>
+      <span class="sr-only">Checkout</span>
+    </a>
+  </header>
+  <main class="flex-1 bg-gradient-to-b from-gray-800 to-gray-950">
+    <section class="w-full pt-12 md:pt-24 lg:pt-32 text-white">
+      <div class="container space-y-10 px-4 md:px-6">
+        <div class="flex flex-col items-center justify-center space-y-4 text-center">
+          <div class="space-y-2">
+            <h1 class="text-3xl font-bold tracking-tighter sm:text-5xl">Login</h1>
+            <p class="max-w-[900px] text-gray-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+              Entre com sua conta para acessar nossa plataforma de checkout.
+            </p>
+          </div>
+          <form class="w-full max-w-md space-y-4" id="loginForm">
+            <div>
+              <label
+                class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium"
+                for="email"
+              >
+                Email
+              </label>
+              <input
+                class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 mt-1 text-black text-black"
+                id="email"
+                placeholder="seu@email.com"
+                type="email"
+              />
+            </div>
+            <div>
+              <label
+                class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium"
+                for="password"
+              >
+                Senha
+              </label>
+              <input
+                class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 mt-1 text-black text-black"
+                id="password"
+                placeholder="********"
+                type="password"
+              />
+            </div>
+            <button
+              class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 w-full bg-violet-500 text-white hover:bg-violet-600"
+              type="submit"
+            >
+              Entrar
+          </button>
+            <div class="text-center text-sm">
+              Não tem uma conta?
+              <a class="underline underline-offset-2 text-white" href="./register" rel="ugc">
+                Cadastre-se
+              </a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="bg-electric-violet text-white p-6 md:py-12 w-full flex justify-center">
+    <div>Cloud Payments © 2024</div>
+  </footer>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="./inc/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="./inc/settings.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+  <div id="loading" style="display: none;" class="fixed inset-0 flex items-center justify-center bg-gray-950 z-50">
+    <div class="loader">
+      <div class="progress-bar">
+        <div class="progress"></div>
+      </div>
+    </div>
+  </div>
+  <div class="flex flex-col min-h-[100dvh] bg-gradient-to-b from-gray-950 to-gray-950 text-white">
+    <header class="bg-electric-violet px-4 lg:px-6 h-14 flex items-center justify-center bg-gray-800">
+      <a class="flex items-center justify-center" href="#">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="h-6 w-6"
+        >
+          <path d="m8 3 4 8 5-5 5 15H2L8 3z"></path>
+        </svg>
+        <span class="sr-only">Checkout</span>
+      </a>
+    </header>
+    <main class="flex-1 flex items-center justify-center bg-gradient-to-b from-gray-800 to-gray-950">
+      <section style="display: block;" class="w-full max-w-md space-y-2 px-4 md:px-6">
+        <div class="space-y-2 text-center">
+          <h1 class="text-3xl font-bold tracking-tighter sm:text-5xl">Registrar</h1>
+          <p class="text-gray-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+            Digite suas informações para criar uma conta.
+          </p>
+        </div>
+        <form class="space-y-4" id="register-form" enctype="multipart/form-data">
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium" for="fullName">
+                Nome Completo
+              </label>
+              <input autocomplete="off" class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 mt-1 text-black" id="fullName" placeholder="João da Silva" type="text" name="fullName" required/>
+            </div>
+            <div>
+              <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium" for="email">
+                Email
+              </label>
+              <input autocomplete="off" class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 mt-1 text-black" id="email" placeholder="joao@exemplo.com" type="email" name="email" required/>
+            </div>
+            <div>
+              <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium" for="password">
+                Senha
+              </label>
+              <input class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 mt-1 text-black" id="password" placeholder="********" type="password" name="password" required/>
+            </div>
+            <div>
+              <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium" for="phone">
+                Telefone
+              </label>
+              <input class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 mt-1 text-black" id="phone"  placeholder="(12) 3456-7890" type="tel" name="phone" required/>
+            </div>
+            <div>
+              <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium" for="cpf">
+                CPF
+              </label>
+              <input autocomplete="off" class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 mt-1 text-black" id="cpf" placeholder="123.456.789-00" type="text" name="cpf" required/>
+            </div>
+            <div>
+              <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium" for="cep">
+                CEP
+              </label>
+              <input class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 mt-1 text-black" id="cep" placeholder="12345-678" type="text" name="cep" required/>
+            </div>
+            <div>
+              <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium" for="city">
+                Cidade
+              </label>
+              <input class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 mt-1 text-black" id="city" placeholder="Cidade" type="text" name="city" required/>
+            </div>
+            <div>
+              <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium" for="state">
+                Estado
+              </label>
+              <input class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 mt-1 text-black" id="state" placeholder="Estado" type="text" name="state" required/>
+            </div>
+            <div>
+              <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium" for="address">
+                Endereço
+              </label>
+              <input class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 mt-1 text-black" id="address" placeholder="Rua Principal, 123, Cidade, Estado" type="text" name="address" required/>
+            </div>
+            <div>
+              <label autocomplete="off" class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium" for="companyName">
+                Nome da Empresa
+              </label>
+              <input class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 mt-1 text-black" id="companyName" placeholder="Warn Nuis." type="text" name="companyName"/>
+            </div>
+            <div>
+              <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium" for="documents">
+                Documentos
+              </label>
+              <div class="flex items-center space-x-2">
+                <div class="relative">
+                  <button type="button" class="whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 h-4 w-4"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" x2="12" y1="3" y2="15"></line></svg>
+                    Frente
+                  </button>
+                  <input type="file" name="documentFront" class="absolute inset-0 opacity-0 cursor-pointer" required/>
+                </div>
+                <div class="relative">
+                  <button type="button" class="whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 h-4 w-4"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" x2="12" y1="3" y2="15"></line></svg>
+                    Verso
+                  </button>
+                  <input type="file" name="documentBack" class="absolute inset-0 opacity-0 cursor-pointer" required/>
+                </div>
+              </div>
+            </div>
+            <div>
+              <label autocomplete="off" class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium" for="income">
+                Renda Bruta
+              </label>
+              <input class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 mt-1 text-black" id="income" placeholder="R$ 50.000" type="text" name="income" required/>
+            </div>
+          </div>
+          <div class="flex items-center space-x-2">
+            <input class="peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground" type="checkbox" id="terms" name="terms" required/>
+            <label class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm" for="terms">Eu concordo com os <a href="#" class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm " style="color:#A020F0">Termos de condições</a></label>
+          </div>
+          <button type="submit" class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 w-full bg-violet-500 text-white hover:bg-violet-600">
+            Registrar
+          </button>
+          <div class="text-center text-sm">
+            Já tem uma conta?
+            <a class="underline underline-offset-2 text-white" href="./" rel="ugc">
+              Entrar
+            </a>
+          </div>
+        </form>
+      </section>
+    </main>  
+    <footer class="bg-electric-violet text-white p-6 md:py-12 w-full flex justify-center">
+      <div>Cloud Payments © 2024</div>
+    </footer>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="inc/main.js"></script>
+</body>
+</html>

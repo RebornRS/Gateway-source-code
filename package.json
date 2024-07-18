@@ -1,0 +1,44 @@
+{
+  "name": "CloudPayments",
+  "version": "1.0.0",
+  "developer": "Reborn Studios",
+  "description": "Gateway payments pix",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js",
+    "dev": "supervisor -w src src/main.js"
+  },
+  "author": "r7born",
+  "license": "ISC",
+  "dependencies": {
+    "archiver": "^7.0.1",
+    "bcrypt": "^5.1.1",
+    "bcryptjs": "^2.4.3",
+    "colors": "^1.4.0",
+    "cookie-parser": "^1.4.6",
+    "dayjs": "^1.11.11",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "hbs": "^4.2.0",
+    "jsonwebtoken": "^9.0.2",
+    "module-alias": "^2.2.3",
+    "multer": "^1.4.5-lts.1",
+    "mysql2": "^3.9.7",
+    "nodemailer": "^6.9.13",
+    "nodemailer-express-handlebars": "^6.1.2",
+    "qrcode": "^1.5.3",
+    "request": "^2.88.2",
+    "sequelize": "^6.37.3",
+    "socket.io": "^4.7.5",
+    "speakeasy": "^2.0.0",
+    "uuidv4": "^6.2.13"
+  },
+  "_moduleAliases": {
+    "@root": ".",
+    "@models": "src/database/models",
+    "@database": "src/database",
+    "@scripts": "src/scripts",
+    "@public": "src/public",
+    "@utils": "src/utils"
+  }
+}

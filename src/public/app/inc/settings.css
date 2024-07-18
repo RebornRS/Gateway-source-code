@@ -1,0 +1,142 @@
+
+/* Gabarito */
+@import url('https://fonts.googleapis.com/css2?family=Gabarito&display=swap');
+
+
+body {
+    font-family: 'Gabarito', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Gabarito', sans-serif;
+  }
+  
+
+/* Estilizando a barra de rolagem */
+::-webkit-scrollbar {
+    width: 10px; /* Largura da barra de rolagem */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Cor do fundo da barra de rolagem */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888; /* Cor do controle deslizante da barra de rolagem */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Cor do controle deslizante da barra de rolagem ao passar o mouse */
+}
+
+/* CSS para inputs */
+input {
+    color: black; /* Definindo a cor padrão do texto como preto */
+}
+
+/* CSS para inputs quando estão ativos (clicados) */
+input:focus {
+    border: none; /* Mantendo a cor do texto como preto quando o input está ativo */
+}
+
+section{
+    display: flex;
+    justify-content: center;
+}
+
+.active-page {
+    font-weight: bold;
+    border-color: black;
+}
+.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+#input_otp {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    font-size: 24px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #007BFF;
+}
+
+.loader {
+    position: relative;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: 4px solid transparent;
+    border-top-color: #ffffff;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.progress-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.progress {
+    width: 80%;
+    height: 8px;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress::before {
+    content: "";
+    display: block;
+    width: 50%;
+    height: 100%;
+    background-color: #ffffff;
+    animation: progress 2s linear infinite;
+}
+
+@keyframes progress {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+#loading {
+    transition: opacity 0.5s ease-out;
+    opacity: 1;
+    visibility: visible;
+}
+
+#loading.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+#cursor:hover{
+    cursor: pointer;
+}
+
+td{
+    cursor:context-menu;
+}

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="/app/inc/settings.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+</head>
+<body>
+  <div id="loading" style="display: none;" class="fixed inset-0 flex items-center justify-center bg-gray-950 z-50">
+    <div class="loader">
+        <div class="progress-bar">
+        <div class="progress"></div>
+        </div>
+    </div>
+</div>
+<script>
+  $("#loading").show()
+  setTimeout(()=>{
+  $("#loading").fadeOut(500)
+
+  },1000)
+</script>
+
+<div class="flex flex-col min-h-[100dvh] bg-gradient-to-b from-gray-950 to-gray-950 text-white">
+  <header class="bg-electric-violet px-4 lg:px-6 h-14 flex items-center justify-center bg-gray-800">
+
+    <nav class="flex gap-4 sm:gap-6">
+        <a class="text-sm font-medium hover:underline underline-offset-4 text-violet-200" href="dashboard" rel="ugc">
+          Home
+        </a>
+        <a class="text-sm font-medium hover:underline underline-offset-4 text-violet-200" href="clients" rel="ugc">
+          Clientes
+        </a>
+        <a class="text-sm font-medium hover:underline underline-offset-4 text-violet-200" href="requests" rel="ugc">
+          Solicitações
+        </a>
+        <a class="text-sm font-medium hover:underline underline-offset-4 text-violet-200" href="./" rel="ugc">
+          Sair
+        </a>
+    </nav>
+  </header>
+  <main class="flex-1 bg-gradient-to-b from-gray-800 to-gray-950">
+    <section class="w-full pt-12 md:pt-24 lg:pt-4 text-white">
+      <div class="container space-y-10 px-4 md:px-6">
+        <div class="flex flex-col items-center justify-center space-y-4 text-center">
+          <div class="space-y-2">
+            <h1 class="text-3xl font-bold tracking-tighter sm:text-5xl">Solicitações</h1>
+            <p class="max-w-[900px] text-violet-200 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+              Gerencie as solicitações de conta.
+            </p>
+          </div>
+          <div class="w-full max-w-4xl">
+            <div class="rounded-lg border bg-white text-gray-900 shadow-lg" data-v0-t="card">
+              <div class="flex flex-col space-y-1.5 p-6">
+                <h3 class="whitespace-nowrap text-2xl font-semibold leading-none tracking-tight">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="w-5 h-5 mr-2"
+                  >
+                    <line x1="8" x2="21" y1="6" y2="6"></line>
+                    <line x1="8" x2="21" y1="12" y2="12"></line>
+                    <line x1="8" x2="21" y1="18" y2="18"></line>
+                    <line x1="3" x2="3.01" y1="6" y2="6"></line>
+                    <line x1="3" x2="3.01" y1="12" y2="12"></line>
+                    <line x1="3" x2="3.01" y1="18" y2="18"></line>
+                  </svg>
+                  Lista de Solicitações
+                </h3>
+              </div>
+              <div class="p-6">
+                <div class="relative w-full overflow-auto">
+                  <table class="w-full caption-bottom text-sm">
+                    <thead class="[&amp;_tr]:border-b">
+                      <tr class="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
+                        <th class="h-12 px-4 text-center font-medium text-muted-foreground [&amp;:has([role=checkbox])]:pr-0 align-middle">
+                          ID
+                        </th>
+                        <th class="h-12 px-4 text-center font-medium text-muted-foreground [&amp;:has([role=checkbox])]:pr-0 align-middle">
+                          Nome Completo
+                        </th>
+                        <th class="h-12 px-4 text-center font-medium text-muted-foreground [&amp;:has([role=checkbox])]:pr-0 align-middle">
+                          CPF/CNPJ
+                        </th>
+                        <th class="h-12 px-4 text-center font-medium text-muted-foreground [&amp;:has([role=checkbox])]:pr-0 align-middle">
+                          Status
+                        </th>
+                        <th class="h-12 px-4 text-center font-medium text-muted-foreground [&amp;:has([role=checkbox])]:pr-0 align-middle">
+                          Ação
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody id="requests" style="" class="[&amp;_tr:last-child]:border-0">
+                      
+                    </tbody>
+
+                    <script>
+                        let requests = {{{json requests}}}
+
+                        console.log(requests)
+                        const resultsPerPage = 5;
+                        let currentPage = 1;
+                        function renderResults() {
+
+                        const start = (currentPage - 1) * resultsPerPage;
+                        const end = start + resultsPerPage;
+                        const currentResults = requests.slice(start, end);
+
+                        currentResults.forEach((key) => {
+                          $("#requests").append(`
+                              <tr class="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted cursor-pointer">
+                              <td class="p-4 [&amp;:has([role=checkbox])]:pr-0 align-middle">${key.id}</td>
+                              <td class="p-4 [&amp;:has([role=checkbox])]:pr-0 align-middle">${key.name}</td>
+                              <td class="p-4 [&amp;:has([role=checkbox])]:pr-0 align-middle">${key.document}</td>
+                              <td class="p-4 [&amp;:has([role=checkbox])]:pr-0 align-middle">Pending</td>
+                              <td class="p-4 [&amp;:has([role=checkbox])]:pr-0 align-middle">
+                                <div class="flex gap-2 items-center justify-center">
+                                  <button onclick="approve('${key.id}')" data-id=${key.id} class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10">
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      width="24"
+                                      height="24"
+                                      viewBox="0 0 24 24"
+                                      fill="none"
+                                      stroke="currentColor"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                      class="h-4 w-4"
+                                    >
+                                      <path d="M20 6 9 17l-5-5"></path>
+                                    </svg>
+                                    <span class="sr-only">Approve</span>
+                                  </button>
+                                  <a id="cursor" href="./request/${key.id}" data-id=${key.id} class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10">
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      width="24"
+                                      height="24"
+                                      viewBox="0 0 24 24"
+                                      fill="none"
+                                      stroke="currentColor"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                      class="h-4 w-4"
+                                    >
+                                      <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
+                                      <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
+                                    </svg>
+                                    <span class="sr-only">View Documents</span>
+                                  </a>
+                                </div>
+                              </td>
+                            </tr>`);
+                            });
+
+                            renderPagination();
+                          }
+
+                          function renderPagination() {
+                            const paginationContainer = document.getElementById('pagination');
+                            paginationContainer.innerHTML = '';
+
+                            const totalPages = Math.ceil(data.length / resultsPerPage);
+
+                            const createPageButton = (page, text, disabled = false) => {
+                                const li = document.createElement('li');
+                                const a = document.createElement('a');
+                                a.className = 'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 gap-1';
+                                if (disabled) a.classList.add('disabled');
+                                a.textContent = text;
+                                a.href = '#';
+                                a.addEventListener('click', (e) => {
+                                    e.preventDefault();
+                                    if (!disabled) {
+                                        currentPage = page;
+                                        renderResults();
+                                    }
+                                });
+
+                                if (page === currentPage) {
+                                    a.classList.add('active-page');
+                                }
+
+                                li.appendChild(a);
+                                return li;
+                            };
+
+                            paginationContainer.appendChild(createPageButton(currentPage - 1, 'Previous', currentPage === 1));
+                            
+                            for (let i = 1; i <= totalPages; i++) {
+                                paginationContainer.appendChild(createPageButton(i, i));
+                            }
+
+                            paginationContainer.appendChild(createPageButton(currentPage + 1, 'Next', currentPage === totalPages));
+                          }
+
+                          renderResults();
+
+                        </script>
+                  </table>
+                </div>
+              </div>
+              <div class="items-center p-6 flex justify-center">
+                <nav aria-label="pagination" class="mx-auto flex w-full justify-center" role="navigation">
+                  <ul id="pagination" class="flex flex-row items-center gap-1">
+                    <li class="">
+                      <li class="">
+                        <a
+                          class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 gap-1 pl-2.5"
+                          aria-label="Go to previous page"
+                          disabled=""
+                          href="#"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="lucide lucide-chevron-left h-4 w-4"
+                          >
+                            <path d="m15 18-6-6 6-6"></path>
+                          </svg>
+                          <span>Previous</span>
+                        </a>
+                      </li>
+                    </li>
+                    <li class="">
+                      <li class="">
+                        <a
+                          aria-current="page"
+                          class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10"
+                          href="#"
+                        >
+                          1
+                        </a>
+                      </li>
+                    </li>
+                    <li class="">
+                      <li class="">
+                        <a
+                          class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 gap-1 pr-2.5"
+                          aria-label="Go to next page"
+                          disabled=""
+                          href="#"
+                        >
+                          <span>Next</span>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="lucide lucide-chevron-right h-4 w-4"
+                          >
+                            <path d="m9 18 6-6-6-6"></path>
+                          </svg>
+                        </a>
+                      </li>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="bg-electric-violet text-white p-6 md:py-12 w-full flex justify-center">
+    <div>Cloud Payments © 2024</div>
+  </footer>
+</div>
+<script>
+  async function approve(id){
+    $("#loading").show()
+    const approve = await fetch(`/api/approve/${id}`,{
+      method:"POST",
+      body:``
+    })
+    const response = await approve.json()
+    if(!response.success) return alert(response.message)
+
+    setTimeout(()=>{
+      $("#loading").fadeOut(500)
+      setTimeout(()=>{
+        alert("Account approved")
+        document.location.href = '/admin/requests'
+      },500)
+
+    },1000)
+
+  }
+</script>
+</body>
+</html>

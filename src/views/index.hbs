@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="./app/inc/settings.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+<div class="flex flex-col min-h-[100dvh] bg-gray-950 text-white">
+    <header class="bg-electric-violet px-4 lg:px-6 h-14 flex items-center" id="">
+      <a class="flex items-center justify-center" href="#" rel="ugc">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="h-6 w-6"
+        >
+          <path d="m8 3 4 8 5-5 5 15H2L8 3z"></path>
+        </svg>
+        <span class="sr-only">Checkout</span>
+      </a>
+      <nav class="ml-auto flex gap-4 sm:gap-6">
+       
+        <a class="text-sm font-medium hover:underline underline-offset-4 text-violet-200" href="#resources" rel="ugc">
+          Recursos
+        </a>
+        <a class="text-sm font-medium hover:underline underline-offset-4 text-violet-200" href="#prices" rel="ugc">
+          Preços
+        </a>
+        <a class="text-sm font-medium hover:underline underline-offset-4 text-violet-200" href="#about" rel="ugc">
+          Sobre
+        </a>
+        <a class="text-sm font-medium hover:underline underline-offset-4 text-violet-200" href="#contact" rel="ugc">
+          Contato
+        </a>
+      </nav>
+    </header>
+    <main class="flex-1 bg-gradient-to-b from-gray-950 to-gray-800">
+      <section class="w-full pt-32 md:pt-32 lg:pt-32 text-white">
+        <div class="container space-y-10 px-4 md:px-6">
+          <div class="flex flex-col items-center justify-center space-y-4 text-center">
+            <div class="space-y-2">
+              <h1 class="text-3xl font-bold tracking-tighter sm:text-5xl">Checkout fácil</h1>
+              <p class="max-w-[900px] text-violet-200 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                Nossa plataforma de checkout segura e fácil de usar ajuda você a simplificar seu processo de pagamento
+                e proporcionar uma experiência perfeita para seus clientes.
+              </p>
+            </div>
+            <a
+              class="inline-flex h-10 items-center justify-center rounded-md bg-violet-500 px-8 text-sm font-medium text-white shadow transition-colors hover:bg-violet-600 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50"
+              href="./app/"
+              rel="ugc"
+            >
+              Comece Agora
+            </a>
+          </div>
+        </div>
+      </section>
+      <section class="w-full py-16 md:py-24 lg:py-24  bg-gray-950 text-white">
+        <div class="container space-y-12 px-4 md:px-6">
+          <div class="flex flex-col items-center justify-center space-y-4 text-center">
+            <div class="inline-block rounded-lg bg-electric-violet/20 px-3 py-1 text-sm text-violet-200" id="resources">
+              Recursos
+            </div>
+            <div class="space-y-2">
+              <h2 class="text-3xl font-bold tracking-tighter sm:text-5xl">Simplifique seu processo de checkout</h2>
+              <p class="max-w-[900px] text-gray-300 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                Nossa plataforma de checkout oferece uma série de recursos para ajudar você a fornecer uma experiência
+                de pagamento perfeita para seus clientes.
+              </p>
+            </div>
+          </div>
+          <div class="mx-auto grid items-start gap-8 sm:max-w-4xl sm:grid-cols-2 md:gap-12 lg:max-w-5xl lg:grid-cols-3">
+            <div class="grid gap-1">
+              <h3 class="text-lg font-bold text-violet-200">Pagamentos Seguros</h3>
+              <p class="text-sm text-gray-300">
+                Nossa plataforma usa medidas de segurança líderes do setor para proteger as informações confidenciais
+                de seus clientes.
+              </p>
+            </div>
+            <div class="grid gap-1">
+              <h3 class="text-lg font-bold text-violet-200">Checkout Personalizável</h3>
+              <p class="text-sm text-gray-300">
+                Integre facilmente nosso checkout em seu site e personalize o visual para combinar com sua marca.
+              </p>
+            </div>
+            <div class="grid gap-1">
+              <h3 class="text-lg font-bold text-violet-200">Faturamento Automatizado</h3>
+              <p class="text-sm text-gray-300">
+                Gere e envie faturas profissionais para seus clientes com apenas alguns cliques.
+              </p>
+            </div>
+            <div class="grid gap-1">
+              <h3 class="text-lg font-bold text-violet-200">Relatórios Detalhados</h3>
+              <p class="text-sm text-gray-300">
+                Acesse relatórios e análises abrangentes para acompanhar suas vendas e dados de clientes.
+              </p>
+            </div>
+            <div class="grid gap-1">
+              <h3 class="text-lg font-bold text-violet-200">Pagamentos Recorrentes</h3>
+              <p class="text-sm text-gray-300">
+                Configure pagamentos recorrentes para assinaturas ou associações com facilidade.
+              </p>
+            </div>
+            <div class="grid gap-1">
+              <h3 class="text-lg font-bold text-violet-200">Otimizado para Dispositivos Móveis</h3>
+              <p class="text-sm text-gray-300">
+                Nosso checkout é otimizado para dispositivos móveis, proporcionando uma experiência perfeita para seus
+                clientes em movimento.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="w-full py-12 md:py-24 lg:py-32 bg-gray-950 text-white">
+        <div class="container space-y-12 px-4 md:px-6">
+          <div class="flex flex-col items-center justify-center space-y-4 text-center">
+            <div class="space-y-2">
+              <div class="inline-block rounded-lg bg-electric-violet/20 px-3 py-1 text-sm text-violet-200" id="prices">
+                Preços
+              </div>
+              <h2 class="text-3xl font-bold tracking-tighter sm:text-5xl">Transparência nos Custos</h2>
+              <p class="max-w-[900px] text-gray-300 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                Sem taxas ocultas, proporcionando clareza e confiança aos clientes.
+              </p>
+            </div>
+          </div>
+          <div class="mx-auto grid items-start gap-8 sm:max-w-4xl sm:grid-cols-2 md:gap-12 lg:max-w-5xl lg:grid-cols-3">
+            <div class="grid gap-1">
+              <h3 class="text-lg font-bold text-violet-200">CARTÃO DE CRÉDITO (D+2)</h3>
+              <p class="text-sm text-gray-300">
+                7,99% por transação
+              </p>
+            </div>
+            <div class="grid gap-1">
+              <h3 class="text-lg font-bold text-violet-200">BOLETO (D+0)</h3>
+              <p class="text-sm text-gray-300">
+                7,99% por transação
+              </p>
+            </div>
+            <div class="grid gap-1">
+              <h3 class="text-lg font-bold text-violet-200">PIX (D+0)</h3>
+              <p class="text-sm text-gray-300">
+                7,99% por transação
+              </p>
+            </div>
+            <div class="grid gap-1">
+              <h3 class="text-lg font-bold text-violet-200">Acessibilidade Financeira</h3>
+              <p class="text-sm text-gray-300">
+                Acesse relatórios e análises abrangentes para acompanhar suas vendas e dados de clientes.
+              </p>
+            </div>
+            <div class="grid gap-1">
+              <h3 class="text-lg font-bold text-violet-200">Praticidade no Uso Diário</h3>
+              <p class="text-sm text-gray-300">
+                Configure pagamentos recorrentes para assinaturas ou associações com facilidade.
+              </p>
+            </div>
+            <div class="grid gap-1">
+              <h3 class="text-lg font-bold text-violet-200">Agilidade no serviço</h3>
+              <p class="text-sm text-gray-300">
+                Nosso checkout é otimizado para dispositivos móveis, proporcionando uma experiênci</p>
+            </div>
+          </div>
+          
+        </div>
+      </section>
+      <section class="w-full py-12 md:py-24 lg:py-32 bg-gray-950 text-white">
+        <div class="container space-y-12 px-4 md:px-6">
+          <div class="flex flex-col items-center justify-center space-y-4 text-center">
+            <div class="space-y-2">
+              <div class="inline-block rounded-lg bg-electric-violet/20 px-3 py-1 text-sm text-violet-200" id="about">
+                Sobre a Empresa
+              </div>
+              <h2 class="text-3xl font-bold tracking-tighter sm:text-5xl">Sobre a Cloud Payments.</h2>
+              <p class="max-w-[900px] text-gray-300 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                A Cloud Payments. é uma empresa de tecnologia focada em fornecer soluções de pagamento inovadoras e
+                confiáveis para empresas de todos os tamanhos. Fundada em 2015, a Cloud Payments. tem se destacado no mercado
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-violet-500 to-violet-800">
+        <div class="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
+          <div class="space-y-3">
+            <h2 class="text-3xl font-bold tracking-tighter md:text-4xl/tight text-white">
+              Experimente a melhor solução de checkout
+            </h2>
+            <p class="mx-auto max-w-[600px] text-violet-200 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+              Nossa plataforma de checkout foi projetada para ajudar você a fornecer uma experiência de pagamento
+              perfeita para seus clientes.
+            </p>
+          </div>
+          <div class="mx-auto w-full max-w-sm space-y-2" id="contact">
+            <form class="flex space-x-2">
+              <input
+                class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 max-w-lg flex-1 text-black"
+                placeholder="Digite seu email"
+                type="email"
+              />
+              <button
+                class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 bg-violet-500 text-white hover:bg-violet-600"
+                type="submit"
+              >
+                Comece Agora
+              </button>
+            </form>
+            <p class="text-xs text-violet-200">Inscreva-se para começar a usar nossa plataforma de checkout.<br><a class="underline underline-offset-2 text-white" href="#" rel="ugc">Termos e Condições</a>
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+      <footer class="bg-electric-violet text-white p-6 md:py-12 w-full flex justify-center">
+        <div>Cloud Payments © 2024</div>
+      </footer>
+  </div>
+  <a href="#" class="fixed bottom-4 right-4 z-50 flex h-10 w-10 items-center justify-center rounded-full bg-[#8B5CF6] text-white shadow-lg transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#8B5CF6] focus:ring-offset-2 dark:bg-[#8B5CF6] dark:text-gray-900 dark:hover:bg-[#7C3AED] dark:focus:ring-[#7C3AED]">
+    <svg
+      style="color:#fff"
+      class="h-6 w-6"
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path d="m5 12 7-7 7 7" />
+      <path d="M12 19V5" />
+    </svg>
+  </a>
+  </body>
+</html>

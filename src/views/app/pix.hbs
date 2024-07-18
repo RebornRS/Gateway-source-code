@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="./inc/settings.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+  <div class="flex flex-col min-h-[100dvh] bg-gradient-to-b from-gray-950 to-gray-950 text-white">
+    <header class="bg-electric-violet px-4 lg:px-6 h-14 flex items-center justify-center bg-gray-800">
+    <nav class="flex gap-4 sm:gap-6">
+        <a class="text-sm font-medium hover:underline underline-offset-4 text-violet-200" href="dashboard" rel="ugc">Extrato</a>
+        <a class="text-sm font-medium hover:underline underline-offset-4 text-violet-200" href="pix" rel="ugc">Transferências</a>
+        <a class="text-sm font-medium hover:underline underline-offset-4 text-violet-200" href="integrations" rel="ugc">Integrações</a>
+        <a class="text-sm font-medium hover:underline underline-offset-4 text-violet-200" href="settings" rel="ugc">Opções</a>
+        <a class="text-sm font-medium hover:underline underline-offset-4 text-violet-200" href="#" rel="ugc">Suporte</a>
+        <a class="text-sm font-medium hover:underline underline-offset-4 text-violet-200" href="/logout" rel="ugc">Sair</a>
+     </nav>
+  </header>
+  <main class="flex-1 bg-gradient-to-b from-gray-800 to-gray-950">
+    <section class="w-full pt-12 md:pt-24 lg:pt-4 text-white">
+      <div class="container space-y-10 px-4 md:px-6">
+        <div class="flex flex-col items-center justify-center space-y-4 text-center">
+          <div class="space-y-2">
+            <h1 class="text-3xl font-bold tracking-tighter sm:text-5xl">Transferências</h1>
+            <p class="max-w-[900px] text-violet-200 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+              Realize transferências por PIX.
+            </p>
+          </div>
+          <div class="w-full max-w-4xl">
+            <div dir="ltr" data-orientation="horizontal">
+              <div
+                role="tablist"
+                aria-orientation="horizontal"
+                class="inline-flex h-9 items-center justify-center rounded-lg bg-muted p-1 text-muted-foreground"
+                tabindex="0"
+                data-orientation="horizontal"
+                style="outline: none;"
+              >
+              </div>
+              <div
+                data-state="active"
+                data-orientation="horizontal"
+                role="tabpanel"
+                aria-labelledby="radix-:rh:-trigger-pix"
+                id="radix-:rh:-content-pix"
+                tabindex="0"
+                class="mt-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                style=""
+              >
+                <div class="rounded-lg border bg-white text-gray-900 shadow-lg" data-v0-t="card">
+                  <div class="flex flex-col space-y-1.5 p-6">
+                    <h3 class="whitespace-nowrap text-2xl font-semibold leading-none tracking-tight">
+                      Transferência PIX
+                    </h3>
+                  </div>
+                  <div class="p-6">
+                    <form class="space-y-4" id="transfer-form">
+                      <div class="grid grid-cols-2 gap-4">
+                        <div>
+                          <label
+                            class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium"
+                            for="pixkey"
+                          >
+                            Chave PIX
+                          </label>
+                          <input
+                            autocomplete="off"
+                            class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 mt-1 text-black text-center"
+                            id="pixkey"
+                            placeholder="69b61cf1-116c-4ddf-fgf2-06f46b374bc9"
+                            type="text"
+                            required
+                          />
+                          <div id="pixkey-error" class="error"></div>
+                          <div id="pixkey-info" class="info"></div>
+                        </div>
+                        <div>
+                          <label
+                            class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium"
+                            for="value"
+                          >
+                            Valor
+                          </label>
+                          <input
+                            autocomplete="off"
+                            class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 mt-1 text-black text-center"
+                            id="value"
+                            placeholder="R$ 50.000"
+                            type="text"
+                            inputmode="numeric"
+                          />
+                        </div>
+                        <div>
+                          <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium" for="commits">
+                            Comentário
+                          </label>
+                          <input
+                            autocomplete="off"
+                            class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 mt-1 text-black text-center"
+                            id="commits"
+                            placeholder="Transferencia de pagamento"
+                            type="text"
+                            required
+                          />
+                        </div>
+                        <div>
+                          <label
+                            class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium"
+                            for="2fa"
+                          >
+                            2FA
+                          </label>
+                          <input
+                            autocomplete="off"
+                            class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 mt-1 text-black text-center"
+                            id="2fa"
+                            placeholder="012685"
+                            type="text"
+                            required
+                          />
+                        </div>
+                      </div>
+                      <div class="flex items-center space-x-2">
+                        <input class="peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground" type="checkbox" id="terms" name="terms" required>
+                        <label class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm" for="terms">Eu concordo com os <a href="#" class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm " style="color:#A020F0">Termos de condições</a></label>
+                      </div>
+                      <button
+                        type="submit"
+                        class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 w-full bg-violet-500 text-white hover:bg-violet-600"
+                      >
+                        Transferir
+                      </button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="bg-electric-violet text-white p-6 md:py-12 w-full flex justify-center">
+    <div>Cloud Payments © 2024</div>
+  </footer>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="./inc/main.js"></script>
+<script src="./inc/settings.js"></script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="/app/inc/settings.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+<div id="loading" style="display: none;" class="fixed inset-0 flex items-center justify-center bg-gray-950 z-50">
+    <div class="loader">
+        <div class="progress-bar">
+        <div class="progress"></div>
+        </div>
+    </div>
+</div>
+<div class="flex flex-col min-h-[100dvh] bg-gradient-to-b from-gray-950 to-gray-950 text-white">
+  <header class="bg-electric-violet px-4 lg:px-6 h-14 flex items-center justify-center bg-gray-800">
+    <nav class="flex gap-4 sm:gap-6">
+        <a class="text-sm font-medium hover:underline underline-offset-4 text-violet-200" href="dashboard" rel="ugc">Extrato</a>
+        <a class="text-sm font-medium hover:underline underline-offset-4 text-violet-200" href="pix" rel="ugc">Transferências</a>
+        <a class="text-sm font-medium hover:underline underline-offset-4 text-violet-200" href="integrations" rel="ugc">Integrações</a>
+        <a class="text-sm font-medium hover:underline underline-offset-4 text-violet-200" href="settings" rel="ugc">Opções</a>
+        <a class="text-sm font-medium hover:underline underline-offset-4 text-violet-200" href="#" rel="ugc">Suporte</a>
+        <a class="text-sm font-medium hover:underline underline-offset-4 text-violet-200" href="/logout" rel="ugc">Sair</a>
+     </nav>
+  </header>
+  <main class="flex-1 bg-gradient-to-b from-gray-800 to-gray-950">
+    <section class="w-full pt-12 md:pt-24 lg:pt-4 text-white">
+        <div class="container space-y-10 px-4 md:px-6">
+        <div class="flex flex-col items-center justify-center space-y-4 text-center">
+            <div class="space-y-2">
+            <h1 class="text-3xl font-bold tracking-tighter sm:text-5xl">Extrato Detalhado</h1>
+            <p class="max-w-[900px] text-violet-200 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                Veja todos os detalhes da sua transação.
+            </p>
+            </div>
+            <div class="w-full max-w-4xl">
+            <div class="rounded-lg border bg-white text-gray-900 shadow-lg" data-v0-t="card">
+                <div class="flex-col space-y-1.5 p-6 flex items-center justify-between">
+                <h3 class="whitespace-nowrap text-2xl font-semibold leading-none tracking-tight">
+                    Transação #{{id}}
+                </h3>
+                </div>
+                <div class="p-6">
+                <div class="grid grid-cols-2 gap-6" style="text-transform: uppercase;">
+                    <div class="grid gap-2">
+                    <div class="flex items-center justify-between">
+                        <span class="text-gray-500 dark:text-gray-400">Status</span>
+                        <span>{{status}}</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-gray-500 dark:text-gray-400">Data</span>
+                        <span>{{createdAt}}</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-gray-500 dark:text-gray-400">Método</span>
+                        <span>PIX</span>
+                    </div>
+                    </div>
+                    <div class="grid gap-2">
+                    <div class="flex items-center justify-between">
+                        <span class="text-gray-500 dark:text-gray-400">Valor</span>
+                        <span>{{amount}}</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-gray-500 dark:text-gray-400">Pagador</span>
+                        <span>{{payer_name}}</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-gray-500 dark:text-gray-400">Cpf</span>
+                        <span>{{payer_document}}</span>
+                    </div>
+                    </div>
+                </div>
+                </div>
+                <div class="items-center p-6 flex justify-center gap-2">
+                <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2">
+                    <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="h-4 w-4 mr-2"
+                    >
+                    <path d="M3 7v6h6"></path>
+                    <path d="M21 17a9 9 0 0 0-9-9 9 9 0 0 0-6 2.3L3 13"></path>
+                    </svg>
+                    Estornar
+                </button>
+                <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2">
+                    <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="h-4 w-4 mr-2"
+                    >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                    <path d="M12 17h.01"></path>
+                    </svg>
+                    Solicitar Suporte
+                </button>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    </section>
+  </main>
+  <footer class="text-white p-6 md:py-12 w-full flex justify-center">
+    <div>Cloud Payments © 2024</div>
+  </footer>
+</div>
+</body>
+</html>
